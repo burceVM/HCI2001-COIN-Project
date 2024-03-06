@@ -1,19 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: Inter;
 }
 
-.container {
+.background-image {
+    background-image: url('./images/background-canvas.png');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
     display: flex;
     height: 100vh; 
 }
 
-.sidebar {
-    width: 10%;
-    background-color: #f2f2f2; 
-}
-
 .content {
     flex: 1; 
+    margin-left: 120px;
+    margin-top: 90px; 
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 350px; 
+    height: 450px; 
+    background-color: #f2f2f2;
+    margin-right: 50px;
+}
+
+.course-title {
+    width: 100%;
+    height: 15%;
+    background-color: darkgray;
+    
+}
+
+.course-content {
+    flex: 1;
+    background-color: beige;
 }
