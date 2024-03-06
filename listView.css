@@ -16,3 +16,66 @@ body, html {
     width: 100%;
     overflow: auto;
 }
+
+#content {
+    display: flex;
+    flex-direction: row;
+    padding-left: 8rem;
+    padding-top: 7.5rem;
+    padding-right: 2rem;
+    padding-bottom: 5rem;
+}
+
+#content > *:not(:last-child) {
+    margin-right: 2rem;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    align-items: center;
+    padding: 8px;
+}
+
+.item > *:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.item > div {
+    flex: 1;
+}
+
+.item > div:first-child {
+    text-align: left;
+}
+
+.item > div:last-child {
+    text-align: right;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.course-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-time {
+    display: flex;
+    flex-direction: column;
+    color: #999;
+}
+
+.course {
+    font-size: 14px;
+}
