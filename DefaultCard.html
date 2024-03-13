@@ -416,19 +416,38 @@
                 container.on("click", function(event){
                     if($(event.target).attr("id") !== urgentTask.attr("id")){
                         clickCntr++;
-                        console.log("Wrong: ", clickCntr);
                     }
                 });
 
                 urgentTask.on("click", function(){
                     endTime = new Date().getTime();
                     var duration = endTime - startTime;
-                    console.log("Duration is: ", duration);
                     tasknumber++;
+                    $('.taskCards').remove();
+                    $('#to-do').remove();
                     if(tasknumber == 2){
-                        
+                        task1Counter = clickCntr;
+                        task1Timer = duration;
+                        $('#t1').removeClass("task").addClass("hidden");
+                        $('#t2').removeClass("hidden").addClass("task");
+                    }else if(tasknumber == 3){
+                        task2Counter = clickCntr;
+                        task2Timer = duration;
+                        $('#t2').removeClass("task").addClass("hidden");
+                        $('#t3').removeClass("hidden").addClass("task");
+                    }else if(tasknumber == 4){
+                        task3Counter = clickCntr;
+                        task3Timer = duration;
+                        $('#t3').removeClass("task").addClass("hidden");
+                        $('#t4').removeClass("hidden").addClass("task");
+                    }else{
+                        task4Counter = clickCntr;
+                        task4Timer = duration;
                     }
+
                     console.log("Task is: ", tasknumber);
+                    console.log("Duration is: ", duration);
+                    console.log("Wrong: ", clickCntr);
                     alert("You found it! You have clicked " + clickCntr + " times");
 
                 })
