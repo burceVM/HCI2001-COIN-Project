@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: Lato, sans-serif;
+}
+
+#background-image{
+    background-image: url('./images/background-canvas.png');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+}
+.header-container {
+    font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 1.5rem 0 0 0;
+    color:#8B8D93;
+    line-height: 1.25;
+    position: absolute;
+    top: 8%;
+    left: 10%;
+}
+#content {
+    width: 85%;
+    height: 7%;
+    border: 1px solid black;
+    position: absolute;
+    top: 15%;
+    right: 2%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+#content img {
+    max-width: 100%; /* Adjusted */
+    max-height: 100%; /* Adjusted */
+}
+.divider {
+    flex: 1; 
+    height: 100%;
+    border-left: none; 
+    
+}
+.divider:nth-child(1) {
+    flex: 2;
+    position: relative;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.divider:nth-child(1)::after {
+    content: ''; 
+    position: absolute; 
+    top: 50%; 
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #74C69D;
+    text-align: center;
+}
+
+.divider:nth-child(2) {
+    flex: 0.5; 
+}
+
+.divider:nth-child(3) {
+    flex: 0.5;
+    /* width: auto;
+    height: auto;
+    max-width: 100%; 
+    max-height: 100%; Adjusted */
+}
+
+.divider:nth-child(4) {
+    flex: 4;
+}
+
+.divider:nth-child(5) {
+    flex: 2; 
+}
+
+
+.divider input[type="checkbox"] {
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    left: 24%; 
+    width: 20px; 
+    height: 20px; 
+    
+}
+
+.divider input[type="checkbox"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #74C69D; /* Green color */
+    border-radius: 3px;
+    opacity: 1; 
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.announcement1 {
+    font-size: .75rem;
+    font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #394B58;
+    background: #FFFFFF;
+    margin-top: 2.25rem;
+ 
+}
+.announcement2 {
+    font-size: 1rem;
+    font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.25;
+    color: black;
+    margin-top: 2.25rem;
+ 
+}
+
+.time {
+    font-size: small;
+    font-family: 'Lato', sans-serif; 
+    font-weight: 400;
+    line-height: 1.25;
+    color:  #394B58;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); 
+    right: 10px; 
+}
+
+.course {
+    font-size: .75rem;
+    font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #74C69D;
+    background: #FFFFFF;
+    margin-top: 2.25rem;
+    text-align: center;
+    padding-right: 10px; 
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #00703C; /* Green color */
+    position: absolute;
+    left: -3%; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-70%);
+}
+
