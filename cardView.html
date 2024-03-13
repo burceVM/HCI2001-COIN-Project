@@ -3,55 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard List View</title>
+    <title>Dashboard Revamped Card View</title>
     <link rel="stylesheet" href="cardView.css">
 </head>
 <body>
 
 <div class="background-image">
     <div class="content">
-        <div class="courses">Courses</div>
+        <div class="courses"><b><u>Courses</u></b></div>
         <div class="card-container">
             <div class="card" id="ccprog1">
                 <div class="course-title"><b>CCPROG1</b></div>
                 <div class="course-content">
-                    <b><u>Announcements</u></b><br><br>
-                    · Welcome to CCPROG1, March 6 10:15AM, Read<br>
-                    · Week 01 Details, March 7 10:15AM, Unread<br>
-                    · Syllabus Posted, March 7 5:00PM, Unread<br>
-                    <br><br>
-                    <b><u>Tasks</u></b><br><br>
-                    ☐ <s>Basic Program Structure, March 8 11:59PM, Done</s><br>
-                    ☐ Mini Quiz, March 8 5:00PM, Not Done<br>
-                    ☐ <s>Take Home Assignment, March 10 11:59PM, Done</s><br>
+                    <div class="announcements">
+                        <b><u>Announcements</u></b>
+                        <ul class="announcements-list">
+                            <li id="ccprog1-announcement-1">Welcome to CCPROG1<div class="announcements-date">March 6, 10:15AM</div></li>
+                            <li id="ccprog1-announcement-2"><b>Week 01 Details<div class="announcements-date">March 7, 10:15AM</b></div></li>
+                            <li id="ccprog1-announcement-3"><b>Syllabus Posted<div class="announcements-date">March 7, 5:00PM</b></div></li>
+                        </ul>
+                    </div>
+                    <div class="tasks">
+                        <b><u>Tasks</u></b><br><br>
+                        <div class="task"><input type="checkbox">Basic Program Structure, March 8, 11:59PM, Done</div>
+                        <div class="task"><input type="checkbox">Mini Quiz, March 8, 5:00PM, Not Done</div>
+                        <div class="task"><input type="checkbox">Take Home Assignment, March 10, 11:59PM, Done</div>
+                    </div>
                 </div>
             </div>
             <div class="card" id="ccicomp">
                 <div class="course-title"><b>CCICOMP</b></div>
                 <div class="course-content">
-                    <b><u>Announcements</u></b><br><br>
-                    · Welcome to CCICOMP, March 7 2:00PM, Read<br>
-                    · Zoom Link for the Term, March 7 8:00PM, Read<br>
-                    · Discord Server for the Course, March 8 5:00PM, Unread<br>
-                    <br><br>
-                    <b><u>Tasks</u></b><br><br>
-                    ☐ Numbers Systems Practice Exercise (Ungraded), March 7 9:00 AM, Not<br>
-                    ☐ <s>Lab Activity 1 - Assemble Your Own PC, March 8 6:00 PM, Done</s><br>
-                    ☐ <s>Problem Set #1 - Number Systems Conversion, March 11 11:59 PM, Done</s><br>
+                    <div class="announcements">
+                        <b><u>Announcements</u></b>
+                        <ul class="announcements-list">
+                            <li id="ccicomp-announcement-1">Welcome to CCICOMP<div class="announcements-date">March 7, 2:00PM</div></li>
+                            <li id="ccicomp-announcement-2"><b>Zoom Link for the Term<div class="announcements-date">March 7, 8:00PM</b></div></li>
+                            <li id="ccicomp-announcement-3"><b>Server for the Course<div class="announcements-date">March 8, 5:00PM</b></div></li>
+                        </ul>
+                    </div>
+                    <div class="tasks">
+                        <b><u>Tasks</u></b><br><br>
+                        <div class="task"><input type="checkbox">Numbers Systems Practice Exercise (Ungraded), March 7, 9:00 AM, Not</div>
+                        <div class="task"><input type="checkbox">Lab Activity 1 - Assemble Your Own PC, March 8, 6:00 PM, Done</div>
+                        <div class="task"><input type="checkbox">Problem Set #1 - Number Systems Conversion, March 11 11:59 PM, Done</div>
+                    </div>
                 </div>
             </div>
             <div class="card" id="mth101a">
                 <div class="course-title"><b>MTH101A</b></div>
                 <div class="course-content">
-                    <b><u>Announcements</u></b><br><br>
-                    · Introduction to MTH101A, March 6 7PM, Unread<br>
-                    · Find a Partner, March 7 7PM, Read<br>
-                    · Problem Set 1A, March 8 9AM, Unread<br>
-                    <br><br>
-                    <b><u>Tasks</u></b><br><br>
-                    ☐ <s>Problem Set 1A, March 9 11:59PM, Done</s><br>
-                    ☐ <s>Problem Set 1B, March 11 11:59PM, Done</s><br>
-                    ☐ Problem Set 2A, March 19 11:59PM, Not<br>
+                    <div class="announcements">
+                        <b><u>Announcements</u></b>
+                        <ul class="announcements-list">
+                            <li id="mth101a-announcement-1"><b>Introduction to MTH101A<div class="announcements-date">March 6, 7PM</b></div></li>
+                            <li id="mth101a-announcement-2">Find a Partner<div class="announcements-date">March 7, 7PM</div></li>
+                            <li id="mth101a-announcement-3"><b>Problem Set 1A<div class="announcements-date">March 8, 9AM</b></div></li>
+                        </ul>
+                    </div>
+                    <div class="tasks">
+                        <b><u>Tasks</u></b><br><br>
+                        <div class="task"><input type="checkbox">Problem Set 1A, March 9, 11:59PM, Done</div>
+                        <div class="task"><input type="checkbox">Problem Set 1B, March 11, 11:59PM, Done</div>
+                        <div class="task"><input type="checkbox">Problem Set 2A, March 19, 11:59PM, Not</div>
+                    </div>
                 </div>
             </div>
         </div>
