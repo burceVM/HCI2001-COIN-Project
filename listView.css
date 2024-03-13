@@ -79,3 +79,13 @@ body, html {
 .course {
     font-size: 14px;
 }
+
+.task-study-container {
+    text-align: center;
+    padding-left: 8rem;
+    padding-top: 7.5rem;
+    padding-right: 2rem;
+    padding-bottom: 5rem;
+    font-size: 5rem;
+    font-weight: bold;
+}

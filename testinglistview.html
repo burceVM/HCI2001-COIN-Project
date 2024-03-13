@@ -8,22 +8,22 @@
 </head>
 <body>
     <div id="background-image">
-        <div class="task-study-container" id="urgTask">
+        <div class="task-study-container" id="t1" onclick="startExperiment(1)">
             <span>Click the <u>most urgent task</u></span>
             <br><br>
             <span style="font-size: 2.5rem;">Click anywhere to continue</span>
         </div>
-        <div class="task-study-container" id="urgTaskSub" style="display: none;">
+        <div class="task-study-container" id="t2" style="display: none;" onclick="startExperiment(2)">
             <span>Click the <u>most urgent task in MTH101A</u></span>
             <br><br>
             <span style="font-size: 2.5rem;">Click anywhere to continue</span>
         </div>
-        <div class="task-study-container" id="recAnnouncement" style="display: none;">
+        <div class="task-study-container" id="t3" style="display: none;" onclick="startExperiment(3)">
             <span>Click the <u>most recent unread announcement</u></span>
             <br><br>
             <span style="font-size: 2.5rem;">Click anywhere to continue</span>
         </div>
-        <div class="task-study-container" id="recAnnouncementSub" style="display: none;">
+        <div class="task-study-container" id="t4" style="display: none;" onclick="startExperiment(4)">
             <span>Click the <u>most recent unread announcement in MTH101A</u></span>
             <br><br>
             <span style="font-size: 2.5rem;">Click anywhere to continue</span>
@@ -283,6 +283,28 @@
             }
         }
 
+        let task1Counter = 0;
+        let task1Timer = 0;
+        let task2Counter = 0;
+        let task2Timer = 0;
+        let task3Counter = 0;
+        let task3Timer = 0;
+        let task4Counter = 0;
+        let task4Timer = 0;
+
+        function startExperiment(tasknumber) {
+            $('.task-study-container').css('display', 'none');
+            $('#content').css('display', 'block');
+
+            showTask(tasknumber);
+        }
+
+        function showTask(tasknumber) {
+            var startTime = new Date().getTime();
+            var endTime = new Date();
+
+            var urgentTask = $('#hw1');
+        }
         
     </script>
 </body>
