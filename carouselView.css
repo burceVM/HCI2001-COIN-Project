@@ -1,4 +1,11 @@
-#background-image {
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+#background-image{
     background-image: url('./images/background-canvas.png');
     background-size: cover;
     background-position: top;
@@ -6,4 +13,119 @@
     height: 100vh;
     width: 100%;
     overflow: auto;
+}
+
+.content{
+    height: 90vh;
+    width: 93%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.taskCards{
+    height: 85vh;
+    width: 70%;
+    margin-left: 60px;
+
+}
+.taskCardsUpper{
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: center;
+}
+.taskCardsLower{
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: center;
+}
+#to-do{
+    height: 80%;
+    width: 15%;
+    margin-left: 60px;
+    position: absolute;
+    bottom: 70px;
+    right: 20px;
+}
+.cards{
+    height: 35vh;
+    width: 35vh;
+    margin: 20px 20px 20px 20px;
+    border: 1px solid black;
+}
+.upper{
+    height: 40%;
+    width: 100%;
+    font-weight: bolder;
+    font-size: larger;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid black;
+}
+.lower{
+    height: 50%;
+    width: 100%;
+    text-align: justify;
+    position: relative;
+    padding-left: 10px;
+}
+
+.threedots{
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.icons{
+    width: 90%;
+    height: 30%;
+    position: absolute;
+    bottom: 0px;
+}
+
+.task{
+    width: 80%;
+    height: 80%;
+    position: relative;
+    text-align: center;
+    border: 1px solid black;
+}
+.hidden{
+    display: none;
+}
+
+.hw{
+    width: 100%;
+    height: 14%;
+    position: relative;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    font-size: smaller;
+}
+
+.iconHW{
+    width: 15%;
+    height: 30%;
+    position: relative;
+    background-image: url(images/IconAnnouncements.png);
+    background-size: cover;
+}
+
+.contentHW{
+    width: 75%;
+    height: 100%;
+    position: relative;
+}
+
+.clearHW{
+    width: 10%;
+    height: 20%;
+    position: relative;
+    background-image: url(images/xButton.png);
+    background-size: cover;
 }
