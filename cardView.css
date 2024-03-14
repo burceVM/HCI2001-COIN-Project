@@ -25,6 +25,11 @@ body {
     margin-bottom: 10px;
 }
 
+.assignments {
+    height: auto;
+    padding: 10px;
+}
+
 .background-image {
     background-image: url('./images/background-canvas.png');
     background-size: cover;
@@ -71,7 +76,14 @@ body {
     flex: 1;
 }
 
-.tasks {
-    height: auto;
-    padding: 10px;
+.task{
+    width: 80%;
+    height: 80%;
+    position: relative;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.hidden{
+    display: none;
 }
