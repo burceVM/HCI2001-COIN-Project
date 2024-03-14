@@ -55,6 +55,8 @@
         let task3Timer = 0;
         let task4Counter = 0;
         let task4Timer = 0;
+        let timeArray = [];
+        let wrongArray = [];
 
         function startExperiment(tasknumber) {
             $('.task-study-container').css('display', 'none');
@@ -359,17 +361,36 @@
 
                 clickCntr--;
 
+                timeArray.push(duration);
+                wrongArray.push(clickCntr);
+
                 $('.task-study-container').each(function() {
                     $(this).find('br').remove();
                 });
 
                 $('.time-taken, .wrong-counter').remove();
 
-                $('.task-study-container').prepend(`
-                    <span class="time-taken" style="font-size: 2.5rem;">Duration: ${duration} milliseconds</span>
-                    <br>
-                    <span class="wrong-counter" style="font-size: 2.5rem;">Wrong Clicks: ${clickCntr}</span>
-                `);
+                if (tasknumber !== 5) {
+                    $('.task-study-container').prepend(`
+                        <span class="time-taken" style="font-size: 2.5rem;">Duration: ${duration} milliseconds</span>
+                        <br>
+                        <span class="wrong-counter" style="font-size: 2.5rem;">Wrong Clicks: ${clickCntr}</span>
+                    `);
+                } else if (tasknumber == 5) {
+                    $('.task-study-container').empty();
+                    for (let i = 0; i < timeArray.length; i++) {
+                        let taskNumber = i + 1;
+                        $('.task-study-container').append(`
+                            <div>
+                                Task ${taskNumber} Duration: ${timeArray[i]} milliseconds
+                            </div>
+                            <div>
+                                Task ${taskNumber} Wrong Clicks: ${wrongArray[i]}
+                            </div>
+                        `);
+                    }
+                    $('.task-study-container').css('font-size', '1rem');
+                }
 
             })
         }
