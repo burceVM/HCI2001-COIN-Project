@@ -24,7 +24,7 @@ body, html {
     top: 8%;
     left: 10%;
 }
-#content {
+.content {
     width: 85%;
     height: 7%;
     border: 1px solid black;
@@ -166,3 +166,15 @@ body, html {
     transform: translateY(-70%);
 }
 
+.task{
+    width: 80%;
+    height: 80%;
+    position: relative;
+    text-align: center;
+    font-size: 5vh;
+    padding: 2vh;
+}
+
+.hidden{
+    display: none;
+}

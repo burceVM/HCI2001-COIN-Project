@@ -3,60 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard List View</title>
+    <title>Dashboard Revamped Card View</title>
     <link rel="stylesheet" href="cardView.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
 
+<body>
 <div class="background-image">
     <div class="content">
-        <div class="courses">Courses</div>
+        <div class="task" id="t1" onclick="startExperiment(1)">
+            <p>
+                <span style="font-size: 5rem; font-weight: bold;">Click the most urgent TASK in all subjects</span> <br> Click to start
+            </p>
+        </div>
+        <div class="hidden" id="t2" onclick="startExperiment(2)">
+            <p>
+                <span style="font-size: 5rem; font-weight: bold;">Click the most urgent TASK in MTH101A</span> <br> Click to start
+            </p>
+        </div>
+        <div class="hidden" id="t3" onclick="startExperiment(3)">
+            <p>
+                <span style="font-size: 5rem; font-weight: bold;">Click the most RECENT UNREAD ANNOUNCEMENT</span> <br> Click to start
+            </p>
+        </div>
+        <div class="hidden" id="t4" onclick="startExperiment(4)">
+            <p>
+                <span style="font-size: 5rem; font-weight: bold;">Click the most RECENT UNREAD ANNOUNCEMENT in MTH101A</span> <br> Click to start
+            </p>
+        </div>
+
+        <!-- <div class="courses"><b><u>Courses</u></b></div>
         <div class="card-container">
             <div class="card" id="ccprog1">
                 <div class="course-title"><b>CCPROG1</b></div>
                 <div class="course-content">
-                    <b><u>Announcements</u></b><br><br>
-                    · Welcome to CCPROG1, March 6 10:15AM, Read<br>
-                    · Week 01 Details, March 7 10:15AM, Unread<br>
-                    · Syllabus Posted, March 7 5:00PM, Unread<br>
-                    <br><br>
-                    <b><u>Tasks</u></b><br><br>
-                    ☐ <s>Basic Program Structure, March 8 11:59PM, Done</s><br>
-                    ☐ Mini Quiz, March 8 5:00PM, Not Done<br>
-                    ☐ <s>Take Home Assignment, March 10 11:59PM, Done</s><br>
+                    <div class="announcements">
+                        <b><u>Announcements</u></b>
+                        <ul class="announcements-list">
+                            <li id="ccprog1-announcement-1">Welcome to CCPROG1<div class="announcements-date">March 6, 10:15AM</li>
+                            <li id="ccprog1-announcement-2"><b>Week 01 Details<div class="announcements-date">March 7, 10:15AM</b></li>
+                            <li id="ccprog1-announcement-3"><b>Syllabus Posted<div class="announcements-date">March 7, 5:00PM</b></li>
+                        </ul>
+                    </div>
+                    <div class="assignments">
+                        <b><u>Assignments</u></b><br><br>
+                        <div class="assignment" id="ccprog1-assignment-1"><input type="checkbox">Basic Program Structure, March 8, 11:59PM, Done</div>
+                        <div class="assignment" id="ccprog1-assignment-2"><input type="checkbox">Mini Quiz, March 8, 5:00PM, Not Done</div>
+                        <div class="assignment" id="ccprog1-assignment-3"><input type="checkbox">Take Home Assignment, March 10, 11:59PM, Done</div>
+                    </div>
                 </div>
             </div>
             <div class="card" id="ccicomp">
                 <div class="course-title"><b>CCICOMP</b></div>
                 <div class="course-content">
-                    <b><u>Announcements</u></b><br><br>
-                    · Welcome to CCICOMP, March 7 2:00PM, Read<br>
-                    · Zoom Link for the Term, March 7 8:00PM, Read<br>
-                    · Discord Server for the Course, March 8 5:00PM, Unread<br>
-                    <br><br>
-                    <b><u>Tasks</u></b><br><br>
-                    ☐ Numbers Systems Practice Exercise (Ungraded), March 7 9:00 AM, Not<br>
-                    ☐ <s>Lab Activity 1 - Assemble Your Own PC, March 8 6:00 PM, Done</s><br>
-                    ☐ <s>Problem Set #1 - Number Systems Conversion, March 11 11:59 PM, Done</s><br>
+                    <div class="announcements">
+                        <b><u>Announcements</u></b>
+                        <ul class="announcements-list">
+                            <li id="ccicomp-announcement-1">Welcome to CCICOMP<div class="announcements-date">March 7, 2:00PM</li>
+                            <li id="ccicomp-announcement-2"><b>Zoom Link for the Term<div class="announcements-date">March 7, 8:00PM</b></li>
+                            <li id="ccicomp-announcement-3"><b>Server for the Course<div class="announcements-date">March 8, 5:00PM</b></li>
+                        </ul>
+                    </div>
+                    <div class="assignments">
+                        <b><u>Assignments</u></b><br><br>
+                        <div class="assignment" id="ccicomp-assignment-1"><input type="checkbox">Numbers Systems Practice Exercise (Ungraded), March 7, 9:00 AM, Not</div>
+                        <div class="assignment" id="ccicomp-assignment-2"><input type="checkbox">Lab Activity 1 - Assemble Your Own PC, March 8, 6:00 PM, Done</div>
+                        <div class="assignment" id="ccicomp-assignment-3"><input type="checkbox">Problem Set #1 - Number Systems Conversion, March 11 11:59 PM, Done</div>
+                    </div>
                 </div>
             </div>
             <div class="card" id="mth101a">
                 <div class="course-title"><b>MTH101A</b></div>
                 <div class="course-content">
-                    <b><u>Announcements</u></b><br><br>
-                    · Introduction to MTH101A, March 6 7PM, Unread<br>
-                    · Find a Partner, March 7 7PM, Read<br>
-                    · Problem Set 1A, March 8 9AM, Unread<br>
-                    <br><br>
-                    <b><u>Tasks</u></b><br><br>
-                    ☐ <s>Problem Set 1A, March 9 11:59PM, Done</s><br>
-                    ☐ <s>Problem Set 1B, March 11 11:59PM, Done</s><br>
-                    ☐ Problem Set 2A, March 19 11:59PM, Not<br>
+                    <div class="announcements">
+                        <b><u>Announcements</u></b>
+                        <ul class="announcements-list">
+                            <li id="mth101a-announcement-1"><b>Introduction to MTH101A<div class="announcements-date">March 6, 7PM</b></li>
+                            <li id="mth101a-announcement-2">Find a Partner<div class="announcements-date">March 7, 7PM</li>
+                            <li id="mth101a-announcement-3"><b>Problem Set 1A<div class="announcements-date">March 8, 9AM</b></li>
+                        </ul>
+                    </div>
+                    <div class="assignments">
+                        <b><u>Assignments</u></b><br><br>
+                        <div class="assignment" id="mth101a-assignment-1"><input type="checkbox">Problem Set 1A, March 9, 11:59PM, Done</div>
+                        <div class="assignment" id="mth101a-assignment-2"><input type="checkbox">Problem Set 1B, March 11, 11:59PM, Done</div>
+                        <div class="assignment" id="mth101a-assignment-3"><input type="checkbox">Problem Set 2A, March 19, 11:59PM, Not</div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+<script>
+    let task1Counter = 0;
+    let task1Timer = 0;
+    let task2Counter = 0;
+    let task2Timer = 0;
+    let task3Counter = 0;
+    let task3Timer = 0;
+    let task4Counter = 0;
+    let task4Timer = 0;
+
+    function startExperiment(tasknumber) {
+        $('.task').css('display', 'none');
+        $('.content').append(`
+        <div class="courses"><b><u>Courses</u></b></div>
+        <div class="card-container">
+            <div class="card" id="ccprog1">
+                <div class="course-title"><b>CCPROG1</b></div>
+                <div class="course-content">
+                    <div class="announcements">
+                        <b><u>Announcements</u></b>
+                        <ul class="announcements-list">
+                            <li id="ccprog1-announcement-3"><b>Syllabus Posted<div class="announcements-date">March 7, 5:00PM</b></li>
+                            <li id="ccprog1-announcement-2"><b>Week 01 Details<div class="announcements-date">March 7, 10:15AM</b></li>
+                            <li id="ccprog1-announcement-1">Welcome to CCPROG1<div class="announcements-date">March 6, 10:15AM</li>                  
+                        </ul>
+                    </div>
+                    <div class="assignments">
+                        <b><u>Assignments</u></b><br><br>
+                        <div class="assignment" id="ccprog1-assignment-1"><input type="checkbox"><s>Basic Program Structure, March 8, 11:59PM</s></div>
+                        <div class="assignment" id="ccprog1-assignment-2"><input type="checkbox">Mini Quiz, March 8, 5:00PM</div>
+                        <div class="assignment" id="ccprog1-assignment-3"><input type="checkbox"><s>Take Home Assignment, March 10, 11:59PM</s></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="ccicomp">
+                <div class="course-title"><b>CCICOMP</b></div>
+                <div class="course-content">
+                    <div class="announcements">
+                        <b><u>Announcements</u></b>
+                        <ul class="announcements-list">
+                            <li id="ccicomp-announcement-3"><b>Server for the Course<div class="announcements-date">March 8, 5:00PM</b></li>
+                            <li id="ccicomp-announcement-2"><b>Zoom Link for the Term<div class="announcements-date">March 7, 8:00PM</b></li>
+                            <li id="ccicomp-announcement-1">Welcome to CCICOMP<div class="announcements-date">March 7, 2:00PM</li>
+                        </ul>
+                    </div>
+                    <div class="assignments">
+                        <b><u>Assignments</u></b><br><br>
+                        <div class="assignment" id="ccicomp-assignment-1"><input type="checkbox">Numbers Systems Practice Exercise (Ungraded), March 7, 9:00 AM</div>
+                        <div class="assignment" id="ccicomp-assignment-2"><input type="checkbox"><s>Lab Activity 1 - Assemble Your Own PC, March 8, 6:00 PM</s></div>
+                        <div class="assignment" id="ccicomp-assignment-3"><input type="checkbox"><s>Problem Set #1 - Number Systems Conversion, March 11 11:59 PM</s></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="mth101a">
+                <div class="course-title"><b>MTH101A</b></div>
+                <div class="course-content">
+                    <div class="announcements">
+                        <b><u>Announcements</u></b>
+                        <ul class="announcements-list">
+                            <li id="mth101a-announcement-3"><b>Problem Set 1A<div class="announcements-date">March 8, 9AM</b></li>
+                            <li id="mth101a-announcement-2">Find a Partner<div class="announcements-date">March 7, 7PM</li>
+                            <li id="mth101a-announcement-1"><b>Introduction to MTH101A<div class="announcements-date">March 6, 7PM</b></li>
+                        </ul>
+                    </div>
+                    <div class="assignments">
+                        <b><u>Assignments</u></b><br><br>
+                        <div class="assignment" id="mth101a-assignment-1"><input type="checkbox"><s>Problem Set 1A, March 9, 11:59PM</s></div>
+                        <div class="assignment" id="mth101a-assignment-2"><input type="checkbox"><s>Problem Set 1B, March 11, 11:59PM</s></div>
+                        <div class="assignment" id="mth101a-assignment-3"><input type="checkbox">Problem Set 2A, March 19, 11:59PM</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        `);
+
+        showTask(tasknumber);
+    }
+
+    function showTask(tasknumber) {
+        var startTime = new Date().getTime();
+        var endTime = new Date();
+
+        var urgentTask = $('#ccicomp-assignment-1');
+                
+        const container = $('.background-image');
+        if(tasknumber == 1){
+            urgentTask = $('#ccicomp-assignment-1');
+        }else if(tasknumber == 2){
+            urgentTask = $('#mth101a-assignment-3');
+        }else if(tasknumber == 3){
+            urgentTask = $('#ccicomp-announcement-3');
+        }else if(tasknumber == 4){
+            urgentTask = $('#mth101a-announcement-3');
+        }
+        let clickCntr = 0;
+        
+        container.on("click", function(event){
+            if($(event.target).attr("id") !== urgentTask.attr("id")){
+                clickCntr++;
+            }
+        });
+
+        urgentTask.on("click", function(){
+            endTime = new Date().getTime();
+            var duration = endTime - startTime;
+            tasknumber++;
+            $('.courses').remove();
+            $('.card-container').remove();
+            if(tasknumber == 2){
+                task1Counter = clickCntr;
+                task1Timer = duration;
+                $('#t1').removeClass("task").addClass("hidden");
+                $('#t2').removeClass("hidden").addClass("task");
+            }else if(tasknumber == 3){
+                task2Counter = clickCntr;
+                task2Timer = duration;
+                $('#t2').removeClass("task").addClass("hidden");
+                $('#t3').removeClass("hidden").addClass("task");
+            }else if(tasknumber == 4){
+                task3Counter = clickCntr;
+                task3Timer = duration;
+                $('#t3').removeClass("task").addClass("hidden");
+                $('#t4').removeClass("hidden").addClass("task");
+            }else{
+                task4Counter = clickCntr;
+                task4Timer = duration;
+            }
+
+            console.log("Task is: ", tasknumber);
+            console.log("Duration is: ", duration);
+            console.log("Wrong: ", clickCntr);
+            alert("You found it! You have clicked " + clickCntr + " times, with a duration of " + duration);
+        })
+    }
+
+</script>
 
 </body>
 </html>
