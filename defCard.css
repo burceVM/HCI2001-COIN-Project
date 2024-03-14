@@ -92,7 +92,8 @@ body, html {
     height: 80%;
     position: relative;
     text-align: center;
-    border: 1px solid black;
+    font-size: 5vh;
+    padding: 2vh;
 }
 .hidden{
     display: none;
