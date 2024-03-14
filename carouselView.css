@@ -46,7 +46,10 @@ body, html {
     position: absolute;
     bottom: 70px;
     right: 20px;
+    top: 280px;
 }
+
+
 .cards{
     height: 35vh;
     width: 35vh;
@@ -92,7 +95,8 @@ body, html {
     height: 80%;
     position: relative;
     text-align: center;
-    border: 1px solid black;
+    font-size: 5vh;
+    padding: 2vh;
 }
 .hidden{
     display: none;
@@ -128,4 +132,33 @@ body, html {
     position: relative;
     background-image: url(images/xButton.png);
     background-size: cover;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #9C9C9C; 
+    margin-bottom: 20px; 
+}
+
+.carousel img {
+    max-width: 100%;
+    max-height: 100%; 
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.carousel {
+    position: relative; 
+    border-bottom: 1px solid #9C9C9C;
+    margin-bottom: 20px;
+}
+
+.carousel span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 24px; 
+    font-weight: bold;
 }
