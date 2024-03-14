@@ -3,13 +3,50 @@
 <head>
     <title>Dashboard Default List View</title>
     <link rel="stylesheet" href="defList.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div id="background-image">
-        <div class="header-container">
-            <b>Wednesday, March 6 </b>
+        <div class="task" id="t1" onclick="startExperiment(1)">
+            <p style="margin: 15vh 15vh 0;">For the first dashboard page,<br> click on the <b>MOST URGENT task</b> among the tasks listed on the screen</p>
+            <p class="start-instructions">Click mouse to start</p>
         </div>
-                <div id="content">
+        <div class="hidden" id="t2" onclick="startExperiment(2)">
+            <p style="margin: 15vh 15vh 0;">For the first dashboard page,<br> click on the <b>MOST URGENT task</b> in MTH101A</p>
+            <p class="start-instructions">Click mouse to start</p>
+        </div>
+        <div class="hidden" id="t3" onclick="startExperiment(3)">
+            <p style="margin: 15vh 15vh 0;">For the first dashboard page,<br> click on the <b>RECENT UNREAD announcement</b> among the announcement listed on the screen</p>
+            <p class="start-instructions">Click mouse to start</p>
+        </div>
+        <div class="hidden" id="t4" onclick="startExperiment(4)">
+            <p style="margin: 15vh 15vh 0;">For the first dashboard page,<br> click on the <b>RECENT UNREAD announcement</b> in MTH101A</p>
+            <p class="start-instructions">Click mouse to start</p>
+        </div>
+    </div>
+    <script>
+        let task1Counter = 0;
+        let task1Timer = 0;
+        let task2Counter = 0;
+        let task2Timer = 0;
+        let task3Counter = 0;
+        let task3Timer = 0;
+        let task4Counter = 0;
+        let task4Timer 
+        function startExperiment(tasknumber){
+            $('.task').css('display', 'none');
+            showTask(tasknumber);
+        }
+
+        function showTask(tasknumber){
+            var startTime = new Date().getTime();
+            var endTime = new Date();
+            $('#background-image').append(`  
+            <div class="container">
+            <div class="header-container">
+                <b>Wednesday, March 6 </b>
+            </div>
+                <div class="content" id="A1">
                     <div class="divider">
                         <span class="course"><b>CCPROG1 - S13</b></span>
                     </div>
@@ -17,7 +54,6 @@
                         <input type="checkbox">
                     </div>
                     <div class="divider">
-                        <!-- <img src="images/IconGreenAnnounce.png"> -->
                     </div>
                     <div class="divider">
                         <span class="announcement1">CCPROG1 - S13 Announcement</span>
@@ -29,7 +65,7 @@
                     </div>
                 </div>
 
-                <div id="content" style="top: 25%;">
+                <div class="content" id="A2" style="top: 25%;">
                     <div class="divider">
                         <span class="course"><b>MTH101A - S14</b></span>
                     </div>
@@ -50,7 +86,7 @@
         <div class="header-container" style="top:30%">
             <b>Thursday, March 7 </b> 
         </div>
-                <div id="content" style = "top: 38%";>
+                <div class="content" id="hw1" style = "top: 38%";>
                     <div class="divider">
                         <span class="course"><b>CCICOMP - S12</b></span>
                     </div>
@@ -68,7 +104,7 @@
                     </div>
                 </div>
         
-                <div id="content" style = "top: 48%";>
+                <div class="content" id="A3" style = "top: 48%";>
                     <div class="divider">
                         <span class="course"><b>CCPROG1 - S13</b></span>
                     </div>
@@ -86,7 +122,7 @@
                         <span class="time">10:15 AM</span> 
                     </div>
                 </div>
-                <div id="content" style = "top: 58%";>
+                <div class="content" id="A4" style = "top: 58%";>
                     <div class="divider">
                         <span class="course"><b>CCICOMP - S12</b></span>
                     </div>
@@ -103,7 +139,7 @@
                         <span class="time">2:00 PM</span> 
                     </div>
                 </div>
-                <div id="content" style = "top: 68%";>
+                <div class="content" id="A5" style = "top: 68%";>
                     <div class="divider">
                         <span class="course"><b>CCPROG1 - S13</b></span>
                     </div>
@@ -121,7 +157,7 @@
                         <span class="time">5:00 PM</span> 
                     </div>
                 </div>
-                <div id="content" style = "top: 78%";>
+                <div class="content" id="A6" style = "top: 78%";>
                     <div class="divider">
                         <span class="course"><b>MTH101A - S14</b></span>
                     </div>
@@ -138,7 +174,7 @@
                         <span class="time">7:00 PM</span> 
                     </div>
                 </div>
-                <div id="content" style = "top: 88%";>
+                <div class="content" id="A7" style = "top: 88%";>
                     <div class="divider">
                         <span class="course"><b>CCICOMP - S12</b></span>
                     </div>
@@ -159,7 +195,7 @@
             <b>Friday, March 8 </b> 
         </div> 
             
-            <div id="content" style = "top: 103%";>
+            <div class="content" id="A8" style = "top: 103%";>
                 <div class="divider">
                     <span class="course"><b>MTH101A - S14</b></span>
                 </div>
@@ -177,7 +213,7 @@
                 </div>
             </div>
 
-            <div id="content" style = "top: 113%";>
+            <div class="content" id="hw2" style = "top: 113%";>
                 <div class="divider">
                     <span class="course"><b>CCPROG1 - S13</b></span>
                 </div>
@@ -195,7 +231,7 @@
                 </div>
             </div>
 
-            <div id="content" style = "top: 123%";>
+            <div class="content" id="A9" style = "top: 123%";>
                 <div class="divider">
                     <span class="course"><b>CCICOMP - S12</b></span>
                 </div>
@@ -214,7 +250,7 @@
                 </div>
             </div>
 
-            <div id="content" style = "top: 133%";>
+            <div class="content" id="hw3" style = "top: 133%";>
                 <div class="divider">
                     <span class="course"><b>CCICOMP - S12</b></span>
                 </div>
@@ -232,7 +268,7 @@
                 </div>
             </div>
 
-            <div id="content" style = "top: 143%";>
+            <div class="content" id="hw4" style = "top: 143%";>
                 <div class="divider">
                     <span class="course"><b>CCPROG1 - S13</b></span>
                 </div>
@@ -252,7 +288,7 @@
     <div class="header-container" style="top:150%">
         <b>Saturday, March 9 </b> 
     </div>
-            <div id="content" style = "top: 158%";>
+            <div class="content" id="hw5" style = "top: 158%";>
                 <div class="divider">
                     <span class="course"><b>CCICOMP - S12</b></span>
                 </div>
@@ -272,7 +308,7 @@
     <div class="header-container" style="top:165%">
         <b>Sunday, March 10 </b> 
         </div>
-            <div id="content" style = "top: 173%";>
+            <div class="content" id="hw6" style = "top: 173%";>
                 <div class="divider">
                     <span class="course"><b>CCPROG1 - S13</b></span>
                 </div>
@@ -292,7 +328,7 @@
     <div class="header-container" style="top:180%">
         <b>Monday, March 11 </b> 
     </div>
-            <div id="content" style = "top: 188%";>
+            <div class="content" id="hw7" style = "top: 188%";>
                 <div class="divider">
                     <span class="course"><b>CCICOMP - S12</b></span>
                 </div>
@@ -309,7 +345,7 @@
                     <span class="time">11:59 PM</span> 
                 </div>
             </div>
-            <div id="content" style = "top: 198%";>
+            <div class="content" id="hw8" style = "top: 198%";>
                 <div class="divider">
                     <span class="course"><b>MTH101A - S14</b></span>
                 </div>
@@ -326,6 +362,103 @@
                     <span class="time">11:59 PM</span> 
                 </div>
             </div>
-   
+        <div class="header-container" style="top:205%">
+            <b>Tuesday, March 19 </b> 
+        </div>
+            <div class="content" id="hw9" style = "top: 213%";>
+                <div class="divider">
+                    <span class="course"><b>MTH101A - S14</b></span>
+                </div>
+                <div class="divider">
+                    <input type="checkbox">
+                </div>
+                <div class="divider"></div>
+                <div class="divider">
+                    <span class="announcement1">MTH101A - S14 Assignment</span>
+                    <br> 
+                    <span class="announcement2">Problem Set 2A</span> 
+                </div>
+                <div class="divider">
+                    <span class="time">11:59 PM</span> 
+                </div>
+            </div>
+        </div>
+            `);
+            var urgentTask = $('#hw1');
+                
+            const container = $('#background-image');
+            if(tasknumber == 1){
+                urgentTask = $('#hw1');
+            }else if(tasknumber == 2){
+                urgentTask = $('#hw9');
+            }else if(tasknumber == 3){
+                urgentTask = $('#A9');
+            }else if(tasknumber == 4){
+                urgentTask = $('#A8');
+            }
+            let clickCntr = 0;
+
+            container.on("click", function(event){
+                if($(event.target).attr("id") !== urgentTask.attr("id")){
+                    clickCntr++;
+                }
+            });
+
+            urgentTask.on("click", function(){
+                    endTime = new Date().getTime();
+                    var duration = endTime - startTime;
+                    tasknumber++;
+                    $('.container').remove();
+                    if(tasknumber == 2){
+                        task1Counter = clickCntr;
+                        task1Timer = duration;
+                        $('#t1').removeClass("task").addClass("hidden");
+                        $('#t2').removeClass("hidden").addClass("task");
+                    }else if(tasknumber == 3){
+                        task2Counter = clickCntr;
+                        task2Timer = duration;
+                        $('#t2').removeClass("task").addClass("hidden");
+                        $('#t3').removeClass("hidden").addClass("task");
+                    }else if(tasknumber == 4){
+                        task3Counter = clickCntr;
+                        task3Timer = duration;
+                        $('#t3').removeClass("task").addClass("hidden");
+                        $('#t4').removeClass("hidden").addClass("task");
+                    }else{
+                        task4Counter = clickCntr;
+                        task4Timer = duration;
+                        $('#background-image').css('background-image', 'none')
+                        $('#background-image').append(`
+                        
+                        <span class="time-taken" style="font-size: 2.5rem;">Task 1 Duration: ${task1Timer} milliseconds</span>
+                        <br>
+                        <span class="wrong-counter" style="font-size: 2.5rem;">Task 1 Wrong Clicks: ${task1Counter}</span>
+                        <br>
+                        <span class="time-taken" style="font-size: 2.5rem;">Task 2 Duration: ${task2Timer} milliseconds</span>
+                        <br>
+                        <span class="wrong-counter" style="font-size: 2.5rem;">Task 2 Wrong Clicks: ${task2Counter}</span>
+                        <br>
+                        <span class="time-taken" style="font-size: 2.5rem;">Task 3 Duration: ${task3Timer} milliseconds</span>
+                        <br>
+                        <span class="wrong-counter" style="font-size: 2.5rem;">Task 3 Wrong Clicks: ${task3Counter}</span>
+                        <br>
+                        <span class="time-taken" style="font-size: 2.5rem;">Task 4 Duration: ${task4Timer} milliseconds</span>
+                        <br>
+                        <span class="wrong-counter" style="font-size: 2.5rem;">Task 4 Wrong Clicks: ${task4Counter}</span>
+                        `);
+                        
+
+                    }
+
+                    console.log("Task is: ", tasknumber);
+                    console.log("Duration is: ", duration);
+                    console.log("Wrong: ", clickCntr);
+                    alert("You found it! You have clicked " + clickCntr + " times");
+
+                })
+                
+
+        }
+    </script>
 </body>
 </html>
