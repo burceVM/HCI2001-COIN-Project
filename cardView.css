@@ -61,6 +61,7 @@ body {
     flex: 1; 
     margin-left: 120px;
     margin-top: 90px; 
+    
 }
 
 .course-title {
@@ -81,7 +82,6 @@ body {
     height: 80%;
     position: relative;
     text-align: center;
-    border: 1px solid black;
 }
 
 .hidden{
