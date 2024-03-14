@@ -302,6 +302,14 @@
                 }).appendTo(this);
             });
 
+            $('#announcements').each(function() {
+                $(this).find('.item').sort(function(a, b) {
+                    var dateA = new Date($(a).find('.date').text() + ' ' + $(a).find('.time').text());
+                    var dateB = new Date($(b).find('.date').text() + ' ' + $(b).find('.time').text());
+                    return dateB - dateA;
+                }).appendTo(this);
+            });
+
             showTask(tasknumber);
         }
 
