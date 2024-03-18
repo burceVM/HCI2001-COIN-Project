@@ -42,6 +42,7 @@ body, html {
     border: 1px solid #ccc;
     align-items: center;
     padding: 8px;
+    cursor: pointer;
 }
 
 .item > *:not(:last-child) {
