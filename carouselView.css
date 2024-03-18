@@ -80,6 +80,7 @@ body, html {
     width: 35vh;
     margin: 20px 20px 20px 20px;
     border: 1px solid black;
+    cursor: pointer;
 }
 .upper{
     height: 40%;
@@ -137,6 +138,7 @@ body, html {
     display: flex;
     flex-direction: row;
     font-size: smaller;
+    cursor: pointer;
 }
 
 .iconHW{
@@ -168,6 +170,7 @@ body, html {
     align-items: center;
     border-bottom: 1px solid #9C9C9C; 
     margin-bottom: 20px; 
+    cursor: pointer;
 }
 
 .carousel img {
