@@ -6,6 +6,10 @@ body {
     font-family: Inter;
 }
 
+li {
+    cursor: pointer
+}
+
 .announcements {
     height: 50%;
     padding: 10px;
@@ -28,6 +32,10 @@ body {
 .assignments {
     height: auto;
     padding: 10px;
+}
+
+.assignment {
+    cursor: pointer
 }
 
 .background-image {
