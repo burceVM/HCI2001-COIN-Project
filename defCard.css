@@ -47,6 +47,9 @@ body, html {
     bottom: 70px;
     right: 20px;
 }
+#to-do p {
+    cursor: pointer;
+}
 .cards{
     height: 35vh;
     width: 35vh;
