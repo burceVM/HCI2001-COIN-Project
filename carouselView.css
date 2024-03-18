@@ -119,6 +119,7 @@ body, html {
     text-align: center;
     font-size: 5vh;
     padding: 2vh;
+    margin-left: 100px;
 }
 .hidden{
     display: none;
