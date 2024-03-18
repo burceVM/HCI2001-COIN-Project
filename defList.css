@@ -173,6 +173,8 @@ body, html {
     text-align: center;
     font-size: 5vh;
     padding: 2vh;
+    margin-left: 150px;
+    margin-top: 100px;
 }
 
 .hidden{
