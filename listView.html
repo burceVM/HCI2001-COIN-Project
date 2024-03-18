@@ -400,8 +400,17 @@
                     $('.task-study-container').css('font-size', '1rem');
                 }
 
+                $('.task-study-container').append(`
+                <br>
+                <div class="proceed" style="font-size: 2.5rem;" onclick="nextView()"><u>Click here to proceed to the next test</u></div>
+                `);
+
             })
         }
+
+        function nextView() {
+            window.location.href = 'cardView.html'
+        }   
         
     </script>
 </body>
