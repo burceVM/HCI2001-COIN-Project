@@ -43,7 +43,7 @@ body, html {
     flex: 1; 
     height: 100%;
     border-left: none; 
-    
+    cursor: pointer; 
 }
 .divider:nth-child(1) {
     flex: 2;
