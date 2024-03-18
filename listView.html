@@ -10,19 +10,19 @@
 <body>
     <div id="background-image">
         <div class="task-study-container" id="t1" onclick="startExperiment(1)">
-            <h5>Click the <u>most urgent task</u></h5>
+            <h5>Click on the <u>most urgent task</u></h5>
             <span style="font-size: 2.5rem;">Click anywhere to continue</span>
         </div>
         <div class="task-study-container" id="t2" style="display: none;" onclick="startExperiment(2)">
-            <h5>Click the <u>most urgent task in MTH101A</u></h5>
+            <h5>Click on the <u>most urgent task in MTH101A</u></h5>
             <span style="font-size: 2.5rem;">Click anywhere to continue</span>
         </div>
         <div class="task-study-container" id="t3" style="display: none;" onclick="startExperiment(3)">
-            <h5>Click the <u>most recent unread announcement</u></h5>
+            <h5>Click on the <u>most recent unread announcement</u></h5>
             <span style="font-size: 2.5rem;">Click anywhere to continue</span>
         </div>
         <div class="task-study-container" id="t4" style="display: none;" onclick="startExperiment(4)">
-            <h5>Click the <u>most recent unread announcement in MTH101A</u></h5>
+            <h5>Click on the <u>most recent unread announcement in MTH101A</u></h5>
             <span style="font-size: 2.5rem;">Click anywhere to continue</span>
         </div>
         <div class="task-study-container" id="t5" style="display: none;" onclick="startExperiment(5)">
@@ -55,6 +55,8 @@
         let task3Timer = 0;
         let task4Counter = 0;
         let task4Timer = 0;
+        let timeArray = [];
+        let wrongArray = [];
 
         function startExperiment(tasknumber) {
             $('.task-study-container').css('display', 'none');
@@ -300,6 +302,14 @@
                 }).appendTo(this);
             });
 
+            $('#announcements').each(function() {
+                $(this).find('.item').sort(function(a, b) {
+                    var dateA = new Date($(a).find('.date').text() + ' ' + $(a).find('.time').text());
+                    var dateB = new Date($(b).find('.date').text() + ' ' + $(b).find('.time').text());
+                    return dateB - dateA;
+                }).appendTo(this);
+            });
+
             showTask(tasknumber);
         }
 
@@ -359,20 +369,48 @@
 
                 clickCntr--;
 
+                timeArray.push(duration);
+                wrongArray.push(clickCntr);
+
                 $('.task-study-container').each(function() {
                     $(this).find('br').remove();
                 });
 
                 $('.time-taken, .wrong-counter').remove();
 
-                $('.task-study-container').prepend(`
-                    <span class="time-taken" style="font-size: 2.5rem;">Duration: ${duration} milliseconds</span>
-                    <br>
-                    <span class="wrong-counter" style="font-size: 2.5rem;">Wrong Clicks: ${clickCntr}</span>
+                if (tasknumber !== 5) {
+                    $('.task-study-container').prepend(`
+                        <span class="time-taken" style="font-size: 2.5rem;">Duration: ${duration} milliseconds</span>
+                        <br>
+                        <span class="wrong-counter" style="font-size: 2.5rem;">Wrong Clicks: ${clickCntr}</span>
+                    `);
+                } else if (tasknumber == 5) {
+                    $('.task-study-container').empty();
+                    for (let i = 0; i < timeArray.length; i++) {
+                        let taskNumber = i + 1;
+                        $('.task-study-container').append(`
+                            <div>
+                                Task ${taskNumber} Duration: ${timeArray[i]} milliseconds
+                            </div>
+                            <div>
+                                Task ${taskNumber} Wrong Clicks: ${wrongArray[i]}
+                            </div>
+                        `);
+                    }
+                    $('.task-study-container').css('font-size', '1rem');
+                }
+
+                $('.task-study-container').append(`
+                <br>
+                <div class="proceed" style="font-size: 2.5rem;" onclick="nextView()"><br><u>Click here to proceed to the next test</u></div>
                 `);
 
             })
         }
+
+        function nextView() {
+            window.location.href = 'cardView.html'
+        }   
         
     </script>
 </body>

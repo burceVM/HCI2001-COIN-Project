@@ -33,7 +33,7 @@
         color: #333;
       }
     
-    .button {
+      .button {
         margin: 2vh auto;
         padding: 1vh;
         display: block;
@@ -42,7 +42,7 @@
         text-align: center;
         color: #dfdfdf;
         cursor: pointer;
-        width: 30%; /* Adjust the width as needed */
+        width: 30%; 
       }
 
     .container {
@@ -65,14 +65,22 @@
       }
 
       .start-instructions {
-        margin-top: 4vh;
-        font-size: 3vh;
+        margin-right: 200px;
+        text-align: center;
+        font-size: 5vh;
+      }
+
+      #task {
+        position: fixed;
+        width: 100%;
+        height: 100%;
       }
 
       .task-display {
-        display: none; /* Hidden by default */
+        display: none; 
         margin: 15vh 15vh 0;
         font-size: 5vh;
+        align-items: center;
         padding: 2vh;
       }
 
@@ -98,8 +106,7 @@
         </div>       
     </div>
     <div id="task" class="task-display" onclick="startExperiment()">
-      <p>For the first dashboard page,<br> click on the <b>most urgent task</b> among the tasks listed on the screen</p>
-      <p class="start-instructions">Click mouse to start</p>
+      <p class="start-instructions"><b>Click mouse to start</b></p>
     </div>
 
 

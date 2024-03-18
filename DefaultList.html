@@ -8,19 +8,19 @@
 <body>
     <div id="background-image">
         <div class="task" id="t1" onclick="startExperiment(1)">
-            <p style="margin: 15vh 15vh 0;">For the first dashboard page,<br> click on the <b>MOST URGENT task</b> among the tasks listed on the screen</p>
+            <p style="margin: 15vh 15vh 0;">Click on the <b>MOST URGENT task</b> among the tasks listed on the screen</p>
             <p class="start-instructions">Click mouse to start</p>
         </div>
         <div class="hidden" id="t2" onclick="startExperiment(2)">
-            <p style="margin: 15vh 15vh 0;">For the first dashboard page,<br> click on the <b>MOST URGENT task</b> in MTH101A</p>
+            <p style="margin: 15vh 15vh 0;">Click on the <b>MOST URGENT task</b> in MTH101A</p>
             <p class="start-instructions">Click mouse to start</p>
         </div>
         <div class="hidden" id="t3" onclick="startExperiment(3)">
-            <p style="margin: 15vh 15vh 0;">For the first dashboard page,<br> click on the <b>RECENT UNREAD announcement</b> among the announcement listed on the screen</p>
+            <p style="margin: 15vh 15vh 0;">Click on the <b>RECENT UNREAD announcement</b> among the announcements listed on the screen</p>
             <p class="start-instructions">Click mouse to start</p>
         </div>
         <div class="hidden" id="t4" onclick="startExperiment(4)">
-            <p style="margin: 15vh 15vh 0;">For the first dashboard page,<br> click on the <b>RECENT UNREAD announcement</b> in MTH101A</p>
+            <p style="margin: 15vh 15vh 0;">Click on the <b>RECENT UNREAD announcement</b> in MTH101A</p>
             <p class="start-instructions">Click mouse to start</p>
         </div>
     </div>
@@ -433,19 +433,21 @@
                         
                         <span class="time-taken" style="font-size: 2.5rem;">Task 1 Duration: ${task1Timer} milliseconds</span>
                         <br>
-                        <span class="wrong-counter" style="font-size: 2.5rem;">Task 1 Wrong Clicks: ${task1Counter}</span>
+                        <span class="wrong-counter" style="font-size: 2.5rem;">Task 1 Wrong Clicks: ${task1Counter - 1}</span>
                         <br>
                         <span class="time-taken" style="font-size: 2.5rem;">Task 2 Duration: ${task2Timer} milliseconds</span>
                         <br>
-                        <span class="wrong-counter" style="font-size: 2.5rem;">Task 2 Wrong Clicks: ${task2Counter}</span>
+                        <span class="wrong-counter" style="font-size: 2.5rem;">Task 2 Wrong Clicks: ${task2Counter - 1}</span>
                         <br>
                         <span class="time-taken" style="font-size: 2.5rem;">Task 3 Duration: ${task3Timer} milliseconds</span>
                         <br>
-                        <span class="wrong-counter" style="font-size: 2.5rem;">Task 3 Wrong Clicks: ${task3Counter}</span>
+                        <span class="wrong-counter" style="font-size: 2.5rem;">Task 3 Wrong Clicks: ${task3Counter - 1}</span>
                         <br>
                         <span class="time-taken" style="font-size: 2.5rem;">Task 4 Duration: ${task4Timer} milliseconds</span>
                         <br>
-                        <span class="wrong-counter" style="font-size: 2.5rem;">Task 4 Wrong Clicks: ${task4Counter}</span>
+                        <span class="wrong-counter" style="font-size: 2.5rem;">Task 4 Wrong Clicks: ${task4Counter - 1}</span>
+                        <br>
+                        <div class="proceed" style="font-size: 2.5rem;" onclick="nextView()"><br><u>Click here to proceed to the next test</u></div>
                         `);
                         
 
@@ -460,6 +462,10 @@
                 
 
         }
+
+        function nextView() {
+            window.location.href = 'DefaultCard.html'
+        }   
     </script>
 </body>
 </html>
