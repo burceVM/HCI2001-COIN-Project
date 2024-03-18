@@ -331,6 +331,12 @@
             }
             let clickCntr = 0;
 
+            urgentTask.hover(function() {
+                $(this).css('cursor', 'pointer');
+            }, function() {
+                $(this).css('cursor', 'auto');
+            });
+
             container.on("click", function(event) {
                 if ($(event.target).attr("id") !== urgentTask.attr("id")) {
                     clickCntr++;
