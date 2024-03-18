@@ -159,9 +159,9 @@ body, html {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #00703C; /* Green color */
+    background-color: #00703C; 
     position: absolute;
-    left: -3%; /* Adjust as needed */
+    left: -3%;
     top: 50%;
     transform: translateY(-70%);
 }
@@ -179,4 +179,35 @@ body, html {
 
 .hidden{
     display: none;
+}
+
+.icon {
+    width: 42px; 
+    height: 42px;
+}
+
+.hwIcon {
+    width: 30px; 
+    height: 40px;
+    padding-left: 12%;
+}
+
+.circle1 {
+    width: 70px; 
+    height: 20px; 
+    border-radius: 20px; 
+    background-color: white;
+    border: 2px solid #66737C; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px; 
+    margin-top: 15px;
+}
+
+.submitted {
+    font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #66737C; 
+    font-size: 10px;
+    font-weight: bold;
 }
