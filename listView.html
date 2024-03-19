@@ -378,13 +378,7 @@
 
                 $('.time-taken, .wrong-counter').remove();
 
-                if (tasknumber !== 5) {
-                    $('.task-study-container').prepend(`
-                        <span class="time-taken" style="font-size: 2.5rem;">Duration: ${duration} milliseconds</span>
-                        <br>
-                        <span class="wrong-counter" style="font-size: 2.5rem;">Wrong Clicks: ${clickCntr}</span>
-                    `);
-                } else if (tasknumber == 5) {
+                if (tasknumber == 5) {
                     $('.task-study-container').empty();
                     $('.task-study-container').append(`
                         <div>
@@ -403,12 +397,11 @@
                         `);
                     }
                     $('.task-study-container').css('font-size', '1rem');
+                    $('.task-study-container').append(`
+                        <br>
+                        <div class="proceed" style="font-size: 2.5rem;" onclick="nextView()"><br><u>Click here to proceed to the next test</u></div>
+                    `);
                 }
-
-                $('.task-study-container').append(`
-                <br>
-                <div class="proceed" style="font-size: 2.5rem;" onclick="nextView()"><br><u>Click here to proceed to the next test</u></div>
-                `);
 
             })
         }
