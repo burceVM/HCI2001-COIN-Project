@@ -386,6 +386,11 @@
                     `);
                 } else if (tasknumber == 5) {
                     $('.task-study-container').empty();
+                    $('.task-study-container').append(`
+                        <div>
+                            <u>Result of Redesigned List View</u>
+                        </div>
+                    `);
                     for (let i = 0; i < timeArray.length; i++) {
                         let taskNumber = i + 1;
                         $('.task-study-container').append(`
