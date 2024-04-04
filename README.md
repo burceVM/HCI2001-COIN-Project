@@ -34,14 +34,12 @@ one-way ANOVA and Tukey's Test. By doing so, we were able to derive insights fro
 - `statAnalysis.ipynb`: Jupyter notebook used for cleaning and data analysis
 
 The folder also contains the datasets (user test results) we used for analysis.
-<br>
-**Uncleaned datasets**
+### Uncleaned datasets
 - `data1.csv`: Completion Time for Task #1 (clicking on a certain urgent task)
 - `data2.csv`: Completion Time for Task #2 (clicking on a certain unread announcement)
 - `data3.csv`: Target Identification Accuracy for Task #1 (clicking on a certain urgent task)
 - `data4.csv`: Target Identification Accuracy for Task #2 (clicking on a certain unread announcement)
-<br>
-**Cleaned datasets**
+### Cleaned datasets
 - `cleaned-data1.csv`: Completion Time for Task #1 (clicking on a certain urgent task)
 - `cleaned-data2.csv`: Completion Time for Task #2 (clicking on a certain unread announcement)
 - `cleaned-data3.csv`: Target Identification Accuracy for Task #1 (clicking on a certain urgent task)
