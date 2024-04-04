@@ -112,14 +112,12 @@
 
 <script>
     function loadExperiment() {
-        // Hide the header, description, and display the task instructions
         document.getElementById('header').style.display = 'none';
         document.getElementById('description').style.display = 'none';
         document.getElementById('task').style.display = 'block';
       }
 
       function startExperiment() {
-        // This is where you would handle the start of the actual experiment
         document.getElementById('task').style.display = 'none'; 
         window.location.href = 'DefaultList.html'   
       }
